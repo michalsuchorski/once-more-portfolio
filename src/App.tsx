@@ -14,7 +14,7 @@ function App() {
     <Flex backgroundColor="red" w="100%" h="100vh" alignItems="center">
       <VStack backgroundColor="white" h="55vh" p={16}>
         <VStack alignItems="flex-start">
-          <Text fontSize="90px">ONCE MORE</Text>
+          <Text fontSize="90px">ONCE-MORE</Text>
           <Text w='50%' h='auto' mt='-35px'>
             BE-NA IS A BRANDING STUDIO LED BY CREATIVE DIRECTOR, BINA ALTERA.
             BE-NA WORKS WITH HEART-CENTERED CHANGE MAKERS AND PURPOSE-LED
