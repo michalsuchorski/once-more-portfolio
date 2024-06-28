@@ -12,7 +12,7 @@ import { FaInstagram, FaFacebookF } from "react-icons/fa";
 function App() {
   return (
     <Flex backgroundColor="red" w="100%" h="100vh" alignItems="center">
-      <VStack backgroundColor="white" h="55vh" p={16}>
+      <VStack backgroundColor="white" minH="55vh" p={16}>
         <VStack alignItems="flex-start">
           <Text fontSize="90px">ONCE-MORE</Text>
           <Text w='50%' h='auto' mt='-35px'>
@@ -51,7 +51,7 @@ function App() {
               icon={<FaFacebookF />}
             />
           </HStack>
-          <Link>ABOUT</Link>
+          <Link>HOME</Link>
           <Link>BEE</Link>
           <Link>MORE</Link>
           <Link>DODATKI</Link>
