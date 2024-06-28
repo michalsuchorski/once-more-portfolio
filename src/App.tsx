@@ -15,10 +15,10 @@ import OnceMore from './imgs/oncemore_napis.png'
 function App() {
   return (
     <Flex backgroundColor="red" w="100%" h="100vh" alignItems="center">
-      <VStack backgroundColor="white" minH="55vh" p={16}>
+      <VStack backgroundColor="white" p={16} >
         <VStack alignItems="flex-start">
           <Image src={OnceMore} />
-          <Text w='50%' h='auto'>
+          <Text maxW='40%' h='auto'>
             BE-NA IS A BRANDING STUDIO LED BY CREATIVE DIRECTOR, BINA ALTERA.
             BE-NA WORKS WITH HEART-CENTERED CHANGE MAKERS AND PURPOSE-LED
             ORIGINAL THINKERS DREAMERS, OVERACHIEVERS AND MISFITS WHO WANT TO
