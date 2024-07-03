@@ -1,44 +1,58 @@
 import {
-  Flex,
-  Text,
-  Button,
-  HStack,
-  VStack,
-  IconButton,
-  Link,
-  Image,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
+    Button,
+    Flex,
+    HStack,
+    IconButton,
+    Image,
+    Link,
+    ListItem,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    Text,
+    UnorderedList,
+    VStack,
+    useDisclosure
 } from "@chakra-ui/react";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
-import OnceMore from "../../imgs/oncemore_napis.png";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link as ReactLink } from "react-router-dom";
 import logo from "../../imgs/logo.png";
+import OnceMore from "../../imgs/oncemore_napis.png";
 
 export const Homepage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex backgroundColor="green" w="100%" h="100vh" alignItems="center">
-      <VStack backgroundColor="white" p={{ base: 4, md: 10, lg: 16 }}  overflowX='hidden'>
-        <VStack alignItems="flex-start">
+    <Flex
+      backgroundColor="green"
+      w="100%"
+      alignItems="center"
+      minH="100vh"
+      flexDirection="column"
+    >
+      <HStack width="100%" h="15vh" />
+      <VStack
+        w="100%"
+        backgroundColor="white"
+        p={{ base: 4, md: 10, lg: 10 }}
+        overflowX="hidden"
+      >
+        <VStack alignItems="flex-start" w="100%">
           <HStack w="full">
             <Image
               onClick={onOpen}
               cursor="pointer"
               py={4}
               src={logo}
-              width={{ base: "100px", md: "175px", lg: "175px" }}
+              width={{ base: "100px", md: "150px", lg: "150px" }}
             />
             <Image
               src={OnceMore}
-              width={{ base: "400px", md: "500px", lg: "700px" }}
+              width={{ base: "400px", md: "500px", lg: "600px" }}
             />
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
               <ModalOverlay />
@@ -46,16 +60,28 @@ export const Homepage = () => {
                 <ModalHeader>O logo</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                 <Text>
-                  Nasze logo, to żuk gnojownik🪳 <br /><br />
-                  Zachwycił nas swoją mozolną i niezwykle spektakularną pracą.<br /><br />
-                  Z odpadów konstruuje kulę. <br /><br />
-                  W 100% naturalną i ekologiczną. <br /><br />
-                  Toczona kula, kończy swoją podróż w dole, w którym rodzi się nowe życie.<br /><br />
-                  To moment kiedy koniec staje się początkiem. <br /><br />
-                  Kiedy odpad zmienia swoje przeznaczenie. <br /><br />
-                  Jeszcze raz! Once more!<br /><br />
-                  Dla nas najpiękniejsza forma RECYKLINGU ♻️ 
+                  <Text>
+                    Nasze logo, to żuk gnojownik🪳 <br />
+                    <br />
+                    Zachwycił nas swoją mozolną i niezwykle spektakularną pracą.
+                    <br />
+                    <br />
+                    Z odpadów konstruuje kulę. <br />
+                    <br />
+                    W 100% naturalną i ekologiczną. <br />
+                    <br />
+                    Toczona kula, kończy swoją podróż w dole, w którym rodzi się
+                    nowe życie.
+                    <br />
+                    <br />
+                    To moment kiedy koniec staje się początkiem. <br />
+                    <br />
+                    Kiedy odpad zmienia swoje przeznaczenie. <br />
+                    <br />
+                    Jeszcze raz! Once more!
+                    <br />
+                    <br />
+                    Dla nas najpiękniejsza forma RECYKLINGU ♻️
                   </Text>
                   {/* <Text as='mark' whiteSpace='pre-line'>
                   #recycle #recycling #dungbeetle
@@ -69,12 +95,48 @@ export const Homepage = () => {
               </ModalContent>
             </Modal>
           </HStack>
-          <Text w={{ base: "100%", md: "40%", lg: "40%" }} h="auto">
-            BE-NA IS A BRANDING STUDIO LED BY CREATIVE DIRECTOR, BINA ALTERA.
-            BE-NA WORKS WITH HEART-CENTERED CHANGE MAKERS AND PURPOSE-LED
-            ORIGINAL THINKERS DREAMERS, OVERACHIEVERS AND MISFITS WHO WANT TO
-            REACH THEIR AUDIENCE THROUGH THE BEAUTY, RESONANCE AND POWER OF
-            DESIGN. IF YOU HAVE A VISION, WE CAN BRING IT TO LIFE.
+          <Text
+            w={{ base: "100%", md: "70%", lg: "70%" }}
+            h="auto"
+            fontSize={{ base: "16px", md: "18px", lg: "18px" }}
+          >
+            Once more- <br />
+            Jeszcze raz! <br /> <br />
+            Dla Naszego środowiska, z myślą o przyszłości. <br />
+            <br />
+            Przerost konsumpcji degraduje Świat, dlatego ponownie podnosimy
+            używane i niemodne ubrania. <br />
+            <br />
+            Każda rzecz, którą odnawiamy, niesie ważne przesłanie. <br />
+            <br />
+            Nic nie trzeba mówić! Wystarczy założyć! <br />
+            <br />
+            Ubrania z drugiej ręki na których malujemy, naszywamy i haftujemy -
+            alert ekosystemowy. <br />
+            <br />
+            Więcej wody, drzew, dzikiej przyrody, więcej miłości! <br />
+            <br />
+            Za dużo, za mocno, za ciasno….w miejscu, w którym żyjemy! <br />
+            <br />
+            🌍 My stawiamy na promocję ekologicznej świadomości. <br />
+            <br />
+            Zysk czy przyszłość? Świadomość czy ustawiczny wyścig? Czerwone?
+            Szerokie? Krótkie? Dopasowane czy jednak zielone? <br />
+            <br />
+            Nasze ubrania to filary ogłoszeniowe w przestrzeni
+            międzypokoleniowej, to głos boomersa i świadomość milenialsa. <br />{" "}
+            <br />
+            Nasze ubrania są: <br />
+            <UnorderedList>
+              <ListItem>świadome</ListItem>
+              <ListItem>współczujące</ListItem>
+              <ListItem>odpowiedzialne</ListItem>
+              <ListItem>odważne</ListItem>
+              <ListItem>zuchwałe</ListItem>
+            </UnorderedList>
+            <br />
+            Zero waste! Stay tuned 💚 <br />
+            Niech żyje RECYKLING!
           </Text>
         </VStack>
         <Flex
@@ -120,6 +182,7 @@ export const Homepage = () => {
           </Flex>
         </Flex>
       </VStack>
+      <HStack width="100%" h="15vh" />
     </Flex>
   );
 };
