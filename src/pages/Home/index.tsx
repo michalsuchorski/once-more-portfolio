@@ -1,5 +1,5 @@
 import { Text, VStack, HStack, Image, Link, Box } from "@chakra-ui/react";
-import logo from "../../imgs/logo.jpg";
+import logo from "../../imgs/logo.png";
 
 
 

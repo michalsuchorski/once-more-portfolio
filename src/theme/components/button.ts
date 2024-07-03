@@ -4,10 +4,10 @@ const variantPrimary: SystemStyleObject = {
     fontWeight: '400',
     fontSize: 'large',
     lineHeight: '0px',
-    backgroundColor: 'red.500',
+    backgroundColor: 'green.700',
     color: 'white',
     _hover: {
-        backgroundColor: 'red.400'
+        backgroundColor: 'green.800'
     }
 }
 
