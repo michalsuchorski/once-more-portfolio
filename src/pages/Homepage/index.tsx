@@ -1,22 +1,22 @@
 import {
-    Button,
-    Flex,
-    HStack,
-    IconButton,
-    Image,
-    Link,
-    ListItem,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay,
-    Text,
-    UnorderedList,
-    VStack,
-    useDisclosure
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Link,
+  ListItem,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  UnorderedList,
+  VStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link as ReactLink } from "react-router-dom";
@@ -182,7 +182,7 @@ export const Homepage = () => {
           </Flex>
         </Flex>
       </VStack>
-      <HStack width="100%" h="15vh" />
+      <HStack width="100%" h={{ base: "0vh", md: "15vh", lg: "15vh" }} />
     </Flex>
   );
 };
