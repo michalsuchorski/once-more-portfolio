@@ -22,6 +22,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link as ReactLink } from "react-router-dom";
 import logo from "../../imgs/logo.png";
 import OnceMore from "../../imgs/oncemore_napis.png";
+import { BackgroundImages } from "../../components/BackgroundImages";
 
 export const Homepage = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -34,7 +35,9 @@ export const Homepage = () => {
       minH="100vh"
       flexDirection="column"
     >
-      <HStack width="100%" h="15vh" />
+      <HStack width="100%" maxH='300px'>
+        <BackgroundImages />
+      </HStack>
       <VStack
         w="100%"
         backgroundColor="white"
@@ -127,6 +130,7 @@ export const Homepage = () => {
             międzypokoleniowej, to głos boomersa i świadomość milenialsa. <br />{" "}
             <br />
             Nasze ubrania są: <br />
+          </Text>
             <UnorderedList>
               <ListItem>świadome</ListItem>
               <ListItem>współczujące</ListItem>
@@ -134,10 +138,11 @@ export const Homepage = () => {
               <ListItem>odważne</ListItem>
               <ListItem>zuchwałe</ListItem>
             </UnorderedList>
+            <Text>
             <br />
             Zero waste! Stay tuned 💚 <br />
             Niech żyje RECYKLING!
-          </Text>
+            </Text>
         </VStack>
         <Flex
           direction={{ base: "column", md: "row", lg: "row" }}
@@ -173,11 +178,12 @@ export const Homepage = () => {
             mt={{ base: 8, md: "0px", lg: "0px" }}
           >
             <ReactLink to={`home`}>
-              <Link>HOME</Link>
+              HOME
             </ReactLink>
-            <Link>BEE</Link>
-            <Link>MORE</Link>
-            <Link>DODATKI</Link>
+            <Link>MARYNARKI</Link>
+            <Link>KOSZULE</Link>
+            <Link>SUKIENKI</Link>
+            <Link>O NAS</Link>
             <Button size="lg">KONTAKT</Button>
           </Flex>
         </Flex>
