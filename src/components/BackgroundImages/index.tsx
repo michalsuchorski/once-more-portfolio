@@ -4,12 +4,14 @@ import { Box, Image, SimpleGrid, keyframes } from '@chakra-ui/react';
 import dog from './dogg.jpeg';
 import cat from './cat1.jpeg';
 import tiger from './tiger.jpeg';
+
 import p1 from './p1.jpeg'
-import p5 from './p5.jpg';
-import p6 from './p6.jpeg';
+import p3 from './p3.jpg'; 
+import p6 from './p6.jpg';
 import p7 from './p7.jpeg';
-import p8 from './p8.jpeg';
+import p8 from './p8.jpg';
 import p9 from './p9.jpeg';
+
 import zuk from './zuk.jpeg'
 import bee from './bee.jpeg'
 import zebra from './zebra.jpeg'
@@ -19,7 +21,7 @@ import zuczki from './zuczki.png'
 import pszczolka from './closeup-of-bee.jpg'
 
 const images = [
-  dog, cat, p1 ,tiger, p5, p6, zuczki, pszczolka ,biedronka ,p7, p8, p9, zuk, bee, zebra, leopard
+  dog, cat, p1 ,tiger, p3, p6, zuczki, pszczolka ,biedronka ,p7, p8, p9, zuk, bee, zebra, leopard
 ];
 
 const shuffleImages = (images: string[]) => {

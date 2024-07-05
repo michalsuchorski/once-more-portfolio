@@ -86,11 +86,6 @@ export const Homepage = () => {
                     <br />
                     Dla nas najpiękniejsza forma RECYKLINGU ♻️
                   </Text>
-                  {/* <Text as='mark' whiteSpace='pre-line'>
-                  #recycle #recycling #dungbeetle
-                  #dungbeetlelogo #zerowaste #zerowastefashion
-                  #zerowasteclothing #zerowasteclothes #embroidery
-                  </Text> */}
                 </ModalBody>
                 <ModalFooter>
                   <Button onClick={onClose}>Zamknij</Button>
@@ -188,7 +183,9 @@ export const Homepage = () => {
           </Flex>
         </Flex>
       </VStack>
-      <HStack width="100%" h={{ base: "0vh", md: "15vh", lg: "15vh" }} />
+      <HStack width="100%" h={{ base: "0vh", sm: '0vh', md: "300px", lg: "300px" }} overflow='hidden'>
+        <BackgroundImages />
+      </HStack>
     </Flex>
   );
 };
