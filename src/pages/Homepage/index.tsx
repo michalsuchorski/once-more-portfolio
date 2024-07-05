@@ -35,10 +35,11 @@ export const Homepage = () => {
       minH="100vh"
       flexDirection="column"
     >
-      <HStack width="100%" maxH='300px'>
+      <HStack width="100%" maxH='300px' zIndex='0'>
         <BackgroundImages />
       </HStack>
       <VStack
+        zIndex='1'
         w="100%"
         backgroundColor="white"
         p={{ base: 4, md: 10, lg: 10 }}
