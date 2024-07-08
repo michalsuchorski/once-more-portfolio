@@ -214,7 +214,6 @@ const Homepage = () => {
         </VStack>
         <HStack
           width="100%"
-          h={{ base: "0vh", sm: "0vh", md: "300px", lg: "300px" }}
           overflow="hidden"
         >
           <BackgroundImages />

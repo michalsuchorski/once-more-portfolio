@@ -14,6 +14,7 @@ import {
 } from "@chakra-ui/react";
 import logo from "../../imgs/logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link as ReactLink } from "react-router-dom";
 
 const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,7 +29,9 @@ const Home = () => {
           px={{ base: 4, md: 4, lg: 8}}
           py={4}
         >
+        <ReactLink to={'/'}>
           <Image src={logo} w={{ base: '100px', md: '150px'}} />
+        </ReactLink>
           <HStack gap={6} fontSize="x-large" display={{ base: 'none', md: 'flex'}}>
             <Link color="green.500">HOME</Link>
             <Link>MARYNARKI</Link>
