@@ -23,9 +23,48 @@ import { Link as ReactLink } from "react-router-dom";
 import logo from "../../imgs/logo.png";
 import OnceMore from "../../imgs/oncemore_napis.png";
 import { BackgroundImages } from "../../components/BackgroundImages";
+import { useState, useEffect } from 'react';
+import { Loader } from "../../components/Loader";
+import FontFaceObserver from 'fontfaceobserver';
+
+const useFontLoader = (fontName: string) => {
+    const [fontsLoaded, setFontsLoaded] = useState(false);
+  
+    useEffect(() => {
+      const loadFonts = async () => {
+        const font = new FontFaceObserver(fontName);
+        try {
+          await font.load();
+          setFontsLoaded(true);
+        } catch (error) {
+          console.error('Failed to load fonts', error);
+        }
+      };
+  
+      loadFonts();
+    }, [fontName]);
+  
+    return fontsLoaded;
+  };
+
 
 export const Homepage = () => {
+  const fontsLoaded = useFontLoader('Fira Mono')
+  const [showLoader, setShowLoader] = useState(true)
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+        setShowLoader(false)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+
+  }, [])
+
+  if(!fontsLoaded || showLoader) {
+    return <Loader />
+  }
 
   return (
     <Flex
