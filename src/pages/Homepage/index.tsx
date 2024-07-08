@@ -215,6 +215,7 @@ const Homepage = () => {
         <HStack
           width="100%"
           overflow="hidden"
+          h='300px'
         >
           <BackgroundImages />
         </HStack>
