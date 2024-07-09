@@ -149,7 +149,7 @@ const PrevArrow = (props: any) => {
                   src={image.src}
                   alt={image.alt}
                   maxW="100%"
-                  maxH="700px"
+
                 />
               </Flex>
             ))}
@@ -157,14 +157,15 @@ const PrevArrow = (props: any) => {
         </Box>
       </Flex>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent
+        >
           <ModalHeader>{selectedImage?.alt}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Image src={selectedImage?.src} alt={selectedImage?.alt} />
-            <Text mt={4}>{selectedImage?.description}</Text>
+            <Text mt={2} py={4}>{selectedImage?.description}</Text>
           </ModalBody>
         </ModalContent>
       </Modal>

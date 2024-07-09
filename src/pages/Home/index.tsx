@@ -43,8 +43,7 @@ const Home = () => {
           </HStack>
           <IconButton colorScheme="black" variant="outline" aria-label="open menu" icon={<RxHamburgerMenu />} onClick={onOpen} display={{ base: 'flex', md: 'none'}} />
         </HStack>
-        <VStack w="100%" mt="-20px" h="100%">
-          <Text fontSize="x-large">Once More</Text>
+        <VStack w="100%" mt="-40px" h="100%">
           <Carousel />
           <Text fontSize="small" py={2}>
             {" "}
