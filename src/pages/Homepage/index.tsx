@@ -21,7 +21,7 @@ import {
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link as ReactLink } from "react-router-dom";
 import logo from "../../imgs/logo.png";
-import OnceMore from "../../imgs/oncemore_napis.png";
+import OnceMore from "../../imgs/oncemore_napis.gif";
 import { BackgroundImages } from "../../components/BackgroundImages";
 import { useState, useEffect, useRef } from "react";
 import { Loader } from "../../components/Loader";
@@ -52,8 +52,6 @@ const useFontLoader = (fontName: string, weight: string) => {
 
 const Homepage = () => {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const someElementRef = useRef<HTMLDivElement | null>(null);
 
   const [isLogoLoaded, setIsLogoLoaded] = useState<boolean>(false);
   const fontsLoaded = useFontLoader("Fira Mono", "400");
@@ -89,7 +87,6 @@ const Homepage = () => {
   return (
     <>
       <Flex
-        ref={someElementRef}
         w="100%"
         alignItems="center"
         minH="100vh"
@@ -122,6 +119,11 @@ const Homepage = () => {
               <Image
                 src={OnceMore}
                 width={{ base: "400px", md: "500px", lg: "600px" }}
+                opacity={isLogoLoaded ? 1 : 0}
+                transition="opacity 0.3s ease-in-out"
+                onLoad={() => {
+                  setIsLogoLoaded(true);
+                }}
               />
             </HStack>
             <Text
