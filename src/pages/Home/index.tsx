@@ -15,13 +15,15 @@ import {
 import logo from "../../imgs/logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link as ReactLink } from "react-router-dom";
+import Carousel from "../../components/ImageCarousel";
+
 
 const Home = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <VStack w="100%" justifyContent="center" h="100vh">
+      <VStack w="100%" justifyContent="center">
         <HStack
           justifyContent="space-between"
           w="100%"
@@ -43,6 +45,7 @@ const Home = () => {
         </HStack>
         <VStack w="100%" mt="-20px" h="100%">
           <Text fontSize="x-large">Once More</Text>
+          <Carousel />
           <Text fontSize="small" py={2}>
             {" "}
             &copy; 2024 Once More
