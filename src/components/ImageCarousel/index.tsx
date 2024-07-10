@@ -49,47 +49,45 @@ const Carousel: React.FC = () => {
     null
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const NextArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <IconButton
+        sx={{ fontSize: 40 }}
+        aria-label="next-img"
+        icon={<ArrowForwardIcon />}
+        onClick={onClick}
+        position="absolute"
+        right="10px"
+        top="50%"
+        transform="translateY(-50%)"
+        zIndex={1}
+        background="transparent"
+        _hover={{ background: "transparent" }}
+      />
+    );
+  };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const NextArrow = (props: any) => {
-  const { onClick } = props;
-  return (
-    <IconButton
-      sx={{ fontSize: 40}}
-      aria-label='next-img'
-      icon={<ArrowForwardIcon />}
-      onClick={onClick}
-      position="absolute"
-      right="10px"
-      top="50%"
-      transform="translateY(-50%)"
-      zIndex={1}
-      background="transparent"
-      _hover={{ background: "transparent" }}
-    />
-  );
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const PrevArrow = (props: any) => {
-  const { onClick } = props;
-  return (
-    <IconButton
-      sx={{ fontSize: 40}}
-      aria-label='prev-img'
-      icon={<ArrowBackIcon />}
-      onClick={onClick}
-      position="absolute"
-      left="10px"
-      top="50%"
-      transform="translateY(-50%)"
-      zIndex={1}
-      background="transparent"
-      _hover={{ background: "transparent" }}
-    />
-  );
-};
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const PrevArrow = (props: any) => {
+    const { onClick } = props;
+    return (
+      <IconButton
+        sx={{ fontSize: 40 }}
+        aria-label="prev-img"
+        icon={<ArrowBackIcon />}
+        onClick={onClick}
+        position="absolute"
+        left="10px"
+        top="50%"
+        transform="translateY(-50%)"
+        zIndex={1}
+        background="transparent"
+        _hover={{ background: "transparent" }}
+      />
+    );
+  };
 
   const settings = {
     infinite: true,
@@ -99,33 +97,32 @@ const PrevArrow = (props: any) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
-        {
-          breakpoint: 1054,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-          }
+      {
+        breakpoint: 1054,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
         },
-        {
-          breakpoint: 1036,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
-            infinite: true,
-
-          }
+      },
+      {
+        breakpoint: 1036,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          infinite: true,
         },
-        {
-          breakpoint: 530,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-          }
-        }
-      ]
+      },
+      {
+        breakpoint: 530,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+    ],
   };
 
   const handleImageClick = (image: ImageData) => {
@@ -145,12 +142,7 @@ const PrevArrow = (props: any) => {
                 onClick={() => handleImageClick(image)}
                 cursor="pointer"
               >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  maxW="100%"
-
-                />
+                <Image src={image.src} alt={image.alt} maxW="100%" />
               </Flex>
             ))}
           </Slider>
@@ -160,12 +152,34 @@ const PrevArrow = (props: any) => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent
+          width="100vw"
+          height="100vh"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          overflow="hidden"
+          maxW='none'
         >
           <ModalHeader>{selectedImage?.alt}</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <Image src={selectedImage?.src} alt={selectedImage?.alt} />
-            <Text mt={2} py={4}>{selectedImage?.description}</Text>
+          <ModalBody
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            p={0}
+          >
+            <Image
+              src={selectedImage?.src}
+              alt={selectedImage?.alt}
+              maxW="90%"
+              maxH="90vh"
+              objectFit="contain"
+            />
+            <Text mt={2} py={4}>
+              {selectedImage?.description}
+            </Text>
           </ModalBody>
         </ModalContent>
       </Modal>
