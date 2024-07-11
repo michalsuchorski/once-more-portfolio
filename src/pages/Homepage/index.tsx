@@ -27,17 +27,14 @@ import { useState, useEffect, useRef } from "react";
 import { Loader } from "../../components/Loader";
 import FontFaceObserver from "fontfaceobserver";
 
-const useFontLoader = (fontName: string, weight: string) => {
+const useFontLoader = (fontName: string) => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
     const loadFonts = async () => {
-      const font = new FontFaceObserver(fontName, {
-        weight,
-      });
+      const font = new FontFaceObserver(fontName)
       try {
         await font.load();
-        console.log("LOADED", fontName, weight);
         setFontsLoaded(true);
       } catch (error) {
         console.error("Failed to load fonts", error);
@@ -54,14 +51,13 @@ const Homepage = () => {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [isLogoLoaded, setIsLogoLoaded] = useState<boolean>(false);
-  const fontsLoaded = useFontLoader("Fira Mono", "400");
-  const fontsLoaded2 = useFontLoader("Fira Mono", "500");
+  const fontsLoaded = useFontLoader("Noto Sans");
 
   const [showLoader, setShowLoader] = useState(true);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    if (fontsLoaded && fontsLoaded2) {
+    if (fontsLoaded) {
       setShowLoader(false);
 
       if (timerRef.current) {
@@ -78,7 +74,7 @@ const Homepage = () => {
         }
       }, 3000);
     }
-  }, [fontsLoaded, fontsLoaded2]);
+  }, [fontsLoaded]);
 
   if (showLoader) {
     return <Loader />;
