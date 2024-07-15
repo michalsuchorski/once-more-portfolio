@@ -189,7 +189,7 @@ const Carousel: React.FC = () => {
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          overflow="hidden"
+          overflow={{base: 'visible', md: 'hidden'}}
           maxW="none"
         >
           <ModalHeader>{selectedImage?.alt}</ModalHeader>
