@@ -184,7 +184,7 @@ const Carousel: React.FC = () => {
         <ModalOverlay />
         <ModalContent
           width="100vw"
-          height="100vh"
+          height={{base: '110vh', md: '100vh'}}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -195,6 +195,7 @@ const Carousel: React.FC = () => {
           <ModalHeader>{selectedImage?.alt}</ModalHeader>
           <ModalCloseButton />
           <ModalBody
+            mt='-80px'
             display="flex"
             flexDirection="column"
             justifyContent="center"
