@@ -8,11 +8,11 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  ModalHeader,
   ModalCloseButton,
   ModalBody,
   IconButton,
   Box,
+  ModalHeader,
 } from "@chakra-ui/react";
 import img1 from "../../imgs/home-img/bee-min.png";
 import img2 from "../../imgs/home-img/freedom-min.png";
@@ -41,37 +41,37 @@ const images: ImageData[] = [
   },
   {
     src: img2,
-    alt: "Image 2",
+    alt: "more freedom",
     description: "Description for Image 2",
   },
   {
     src: img3,
-    alt: "Image 3",
+    alt: "more love",
     description: "Description for Image 3",
   },
   {
     src: img4,
-    alt: "Image 1",
+    alt: "moonlight",
     description: "Description for Image 1",
   },
   {
     src: img5,
-    alt: "Image 2",
+    alt: "more wildlife",
     description: "Description for Image 2",
   },
   {
     src: img6,
-    alt: "Image 3",
+    alt: "shine",
     description: "Description for Image 3",
   },
   {
     src: img7,
-    alt: "Image 2",
+    alt: "more trees",
     description: "Description for Image 2",
   },
   {
     src: img8,
-    alt: "Image 3",
+    alt: "more water",
     description: "Description for Image 3",
   },
 ];
@@ -183,16 +183,16 @@ const Carousel: React.FC = () => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent
-          width="100vw"
-          height={{base: '110vh', md: '100vh'}}
+          height="100vh"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
           overflow={{base: 'visible', md: 'hidden'}}
-          maxW="none"
         >
-          <ModalHeader>{selectedImage?.alt}</ModalHeader>
+          <ModalHeader>
+            {selectedImage?.alt}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody
             mt='-80px'
@@ -202,14 +202,7 @@ const Carousel: React.FC = () => {
             alignItems="center"
             p={0}
           >
-            <Image
-              src={selectedImage?.src}
-              alt={selectedImage?.alt}
-              borderRadius={4}
-              maxH="70vh"
-              objectFit="contain"
-            />
-            <Text py={4} px={{ base: 2, md: 8, lg: 16}} textAlign='center' maxW='1440px'>
+            <Text py={4} px={{ base: 2, md: 8, lg: 16}} textAlign='justify' sx={{'text-align-last': 'justify'}} maxW='1440px' >
               {selectedImage?.description}
             </Text>
           </ModalBody>
