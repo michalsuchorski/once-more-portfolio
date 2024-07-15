@@ -126,34 +126,37 @@ const Homepage = () => {
               w={{ base: "100%", md: "70%", lg: "70%" }}
               h="auto"
               fontSize={{ base: "16px", md: "18px", lg: "18px" }}
+              textAlign='justify'   
+              sx={{ 'text-justify': 'inter-word'}}
+              
             >
-              Once more- <br />
-              Jeszcze raz! <br /> <br />
-              Dla Naszego środowiska, z myślą o przyszłości. <br />
-              <br />
+              Once more-
+              Jeszcze raz!
+              Dla Naszego środowiska, z myślą o przyszłości. 
+              
               Przerost konsumpcji degraduje Świat, dlatego ponownie podnosimy
-              używane i niemodne ubrania. <br />
-              <br />
-              Każda rzecz, którą odnawiamy, niesie ważne przesłanie. <br />
-              <br />
-              Nic nie trzeba mówić! Wystarczy założyć! <br />
-              <br />
+              używane i niemodne ubrania. 
+              
+              Każda rzecz, którą odnawiamy, niesie ważne przesłanie. 
+              
+              Nic nie trzeba mówić! Wystarczy założyć! 
+              
               Ubrania z drugiej ręki na których malujemy, naszywamy i haftujemy
-              - alert ekosystemowy. <br />
-              <br />
-              Więcej wody, drzew, dzikiej przyrody, więcej miłości! <br />
-              <br />
-              Za dużo, za mocno, za ciasno….w miejscu, w którym żyjemy! <br />
-              <br />
-              🌍 My stawiamy na promocję ekologicznej świadomości. <br />
-              <br />
+              - alert ekosystemowy. 
+              
+              Więcej wody, drzew, dzikiej przyrody, więcej miłości! 
+              
+              Za dużo, za mocno, za ciasno….w miejscu, w którym żyjemy! 
+              
+              🌍 My stawiamy na promocję ekologicznej świadomości. 
+              
               Zysk czy przyszłość? Świadomość czy ustawiczny wyścig? Czerwone?
-              Szerokie? Krótkie? Dopasowane czy jednak zielone? <br />
-              <br />
+              Szerokie? Krótkie? Dopasowane czy jednak zielone? 
+              
               Nasze ubrania to filary ogłoszeniowe w przestrzeni
               międzypokoleniowej, to głos boomersa i świadomość milenialsa.{" "}
-              <br /> <br />
-              Nasze ubrania są: <br />
+               
+              Nasze ubrania są: 
             </Text>
             <UnorderedList>
               <ListItem>świadome</ListItem>
@@ -163,7 +166,6 @@ const Homepage = () => {
               <ListItem>zuchwałe</ListItem>
             </UnorderedList>
             <Text>
-              <br />
               Zero waste! Stay tuned 💚 <br />
               Niech żyje RECYKLING!
             </Text>
