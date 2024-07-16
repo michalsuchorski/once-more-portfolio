@@ -10,7 +10,6 @@ import {
   ModalContent,
   ModalCloseButton,
   ModalBody,
-  IconButton,
   Box,
   ModalHeader,
 } from "@chakra-ui/react";
@@ -22,8 +21,7 @@ import img5 from "../../imgs/home-img/morewildlife-min.png";
 import img6 from "../../imgs/home-img/shine-min.png";
 import img7 from "../../imgs/home-img/trees-min.png";
 import img8 from "../../imgs/home-img/water-min.png";
-
-import { ArrowForwardIcon, ArrowBackIcon } from "@chakra-ui/icons";
+import { NextArrow, PrevArrow } from "../CarouselArrows";
 
 interface ImageData {
   src: string;
@@ -31,7 +29,8 @@ interface ImageData {
   description: string;
 }
 
-const bee = 'Pszczoły pełnią kluczową rolę w całym systemie ekologicznym. Zapylają około 80% roślin. Bez pszczół, rozwój i wzrost roślin nie jest możliwy. Trudne warunki w środowisku naturalnym, są dla nich dużym zagrożeniem i przyczyniają się do ich wymierania. Gdyby zabrakło pszczoły miodnej, nie było by, większości owoców i warzyw. Istnieje przekonanie, że od owadów zapylających zależy gospodarka żywnościowa, a więc i sytuacja społeczna i ekonomiczna na świecie.'
+const bee =
+  "Pszczoły pełnią kluczową rolę w całym systemie ekologicznym. Zapylają około 80% roślin. Bez pszczół, rozwój i wzrost roślin nie jest możliwy. Trudne warunki w środowisku naturalnym, są dla nich dużym zagrożeniem i przyczyniają się do ich wymierania. Gdyby zabrakło pszczoły miodnej, nie było by, większości owoców i warzyw. Istnieje przekonanie, że od owadów zapylających zależy gospodarka żywnościowa, a więc i sytuacja społeczna i ekonomiczna na świecie.";
 
 const images: ImageData[] = [
   {
@@ -82,46 +81,6 @@ const Carousel: React.FC = () => {
     null
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const NextArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <IconButton
-        sx={{ fontSize: 40 }}
-        aria-label="next-img"
-        icon={<ArrowForwardIcon />}
-        onClick={onClick}
-        position="absolute"
-        right="10px"
-        top="50%"
-        transform="translateY(-50%)"
-        zIndex={1}
-        background="transparent"
-        _hover={{ background: "transparent" }}
-      />
-    );
-  };
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const PrevArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <IconButton
-        sx={{ fontSize: 40 }}
-        aria-label="prev-img"
-        icon={<ArrowBackIcon />}
-        onClick={onClick}
-        position="absolute"
-        left="10px"
-        top="50%"
-        transform="translateY(-50%)"
-        zIndex={1}
-        background="transparent"
-        _hover={{ background: "transparent" }}
-      />
-    );
-  };
-
   const settings = {
     infinite: true,
     speed: 500,
@@ -136,10 +95,10 @@ const Carousel: React.FC = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,
-          centerMode: false, 
+          centerMode: false,
           variableWidth: false,
         },
-      }
+      },
     ],
   };
 
@@ -147,7 +106,7 @@ const Carousel: React.FC = () => {
     setSelectedImage(image);
     onOpen();
   };
-
+  
   return (
     <>
       <Flex width="100%" mt={10} flexDir="column" alignItems="center">
@@ -159,18 +118,18 @@ const Carousel: React.FC = () => {
                 key={image.src}
                 onClick={() => handleImageClick(image)}
                 cursor="pointer"
-                alignItems='center'
-                overflow='hidden'
-                justifyContent='center'
-                w='auto'
-                h='auto'
+                alignItems="center"
+                overflow="hidden"
+                justifyContent="center"
+                w="auto"
+                h="auto"
               >
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  w='auto'
-                  h='auto'
-                  maxH='80vh'
+                  w="auto"
+                  h="auto"
+                  maxH="80vh"
                   maxW="100%"
                   objectFit="contain"
                 />
@@ -183,26 +142,29 @@ const Carousel: React.FC = () => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent
-          height="100vh"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           alignItems="center"
-          overflow={{base: 'visible', md: 'hidden'}}
+          overflow={{ base: "visible", md: "hidden" }}
         >
-          <ModalHeader>
-            {selectedImage?.alt}
-          </ModalHeader>
+          <ModalHeader>{selectedImage?.alt}</ModalHeader>
           <ModalCloseButton />
           <ModalBody
-            mt='-80px'
+            mt={-4}
             display="flex"
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
             p={0}
           >
-            <Text py={4} px={{ base: 2, md: 8, lg: 16}} textAlign='justify' sx={{'text-align-last': 'justify'}} maxW='1440px' >
+            <Text
+              py={8}
+              px={{ base: 4, md: 8, lg: 16 }}
+              textAlign="justify"
+              sx={{ "text-align-last": "justify" }}
+              maxW="1440px"
+            >
               {selectedImage?.description}
             </Text>
           </ModalBody>
