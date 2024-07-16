@@ -113,7 +113,7 @@ export const ClothesGallery: React.FC = () => {
                                 src={subImage}
                                 w="auto"
                                 h="auto"
-                                maxH="80vh"
+                                maxH="100vh"
                                 maxW="100%"
                               />
                             );
