@@ -69,7 +69,12 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
             key={image.src}
             onClick={() => handleImageClick(image)}
           >
-            <Image src={image.src} />
+            <Image
+              src={image.src}
+              w='100%'
+              h='100%'
+              objectFit='cover'
+            />
           </GridItem>
         );
       })}
