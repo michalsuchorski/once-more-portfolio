@@ -60,7 +60,7 @@ export const ClothesGallery: React.FC = () => {
     <>
       <VStack w="100%" px={{ base: 2, md: 6, lg: 8 }}>
         <Grid
-          templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
+          templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }} py={8}
           w="full"
           gap={{ base: 2, md: 4, lg: 8 }}
         >

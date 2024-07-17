@@ -33,6 +33,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    variableWidht: true,
     responsive: [
       {
         breakpoint: 1025,
@@ -82,7 +83,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent
-          height={{ base: "85vh", md: "85vh", lg: "100vh" }}
+          height={{ base: "85vh", md: "90vh", lg: "100vh" }}
           w="100vw"
           maxW="none"
         >
@@ -103,7 +104,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
                     src={subImage}
                     w="auto"
                     h="auto"
-                    maxH="100vh"
+                    maxH="80vh"
                     maxW="100%"
                   />
                 ))}
