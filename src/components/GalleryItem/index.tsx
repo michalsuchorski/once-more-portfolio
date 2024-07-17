@@ -65,6 +65,10 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
       {images.map((image) => {
         return (
           <GridItem
+            _hover={{
+                transform: 'scale(1.05)'
+            }}
+            transition='all 0.15s ease-in'
             w="100%"
             cursor="pointer"
             key={image.src}
