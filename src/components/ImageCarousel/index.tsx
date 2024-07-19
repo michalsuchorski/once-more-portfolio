@@ -30,7 +30,7 @@ interface ImageData {
   description: string;
 }
 
-const bee = "Pszczoły pełnią kluczową rolę w całym systemie ekologicznym...";
+const bee = "Pszczoły pełnią kluczową rolę w całym systemie ekologicznym. Zapylają około 80% roślin. Bez pszczół, rozwój i wzrost roślin nie jest możliwy. Trudne warunki w środowisku naturalnym, są dla nich dużym zagrożeniem i przyczyniają się do ich wymierania. Gdyby zabrakło pszczoły miodnej, nie było by, większości owoców i warzyw. Istnieje przekonanie, że od owadów zapylających zależy gospodarka żywnościowa, a więc i sytuacja społeczna i ekonomiczna na świecie.";
 
 const images: ImageData[] = [
   { src: img1, alt: "bee", description: bee },
