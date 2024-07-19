@@ -66,20 +66,15 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
         return (
           <GridItem
             _hover={{
-                transform: 'scale(1.05)'
+              transform: "scale(1.05)",
             }}
-            transition='all 0.15s ease-in'
+            transition="all 0.15s ease-in"
             w="100%"
             cursor="pointer"
             key={image.src}
             onClick={() => handleImageClick(image)}
           >
-            <Image
-              src={image.src}
-              w='100%'
-              h='100%'
-              objectFit='cover'
-            />
+            <Image src={image.src} w="100%" h="100%" objectFit="cover" />
           </GridItem>
         );
       })}
@@ -101,16 +96,18 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
           >
             <Box w="full">
               <Slider {...settings}>
-                {selectedImage?.subImgs.map((subImage) => (
-                  <Image
-                    borderRadius="md"
-                    p={{ base: 2, md: 2, lg: 1 }}
-                    src={subImage}
-                    w="auto"
-                    h="auto"
-                    maxH="80vh"
-                    maxW="100%"
-                  />
+                {selectedImage?.subImgs.map((subImage, index) => (
+                    <Image
+                      key={index}
+                      borderRadius="md"
+                      p={{ base: 2, md: 2, lg: 1 }}
+                      src={subImage}
+                      w="auto"
+                      h="auto"
+                      maxH="80vh"
+                      maxW="100%"
+                      objectFit="cover"
+                    />
                 ))}
               </Slider>
             </Box>
