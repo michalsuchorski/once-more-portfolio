@@ -1,7 +1,7 @@
 import {
   Box,
   GridItem,
-  Image,
+  Image as ChakraImage,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -9,10 +9,11 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NextArrow, PrevArrow } from "../CarouselArrows";
 import Slider from "react-slick";
 import { ImageData } from "./types";
+import { Loader } from "../Loader";
 
 interface GalleryItemProps {
   images: ImageData[];
@@ -23,11 +24,32 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
   const [selectedImage, setSelectedImage] = React.useState<ImageData | null>(
     null
   );
+  const [loading, setLoading] = useState(true);
 
   const handleImageClick = (image: ImageData) => {
     setSelectedImage(image);
+    setLoading(true)
     onOpen();
   };
+
+  useEffect(() => {
+    if (selectedImage) {
+      const loadImages = async () => {
+        const imagePromises = selectedImage.subImgs.map(
+          (subImage) =>
+            new Promise<void>((resolve) => {
+              const img = new Image();
+              img.src = subImage;
+              img.onload = () => resolve();
+            })
+        );
+        await Promise.all(imagePromises);
+        setLoading(false);
+      };
+
+      loadImages();
+    }
+  }, [selectedImage]);
 
   const settings = {
     speed: 500,
@@ -74,7 +96,7 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
             key={image.src}
             onClick={() => handleImageClick(image)}
           >
-            <Image src={image.src} w="100%" h="100%" objectFit="cover" />
+            <ChakraImage src={image.src} w="100%" h="100%" objectFit="cover" />
           </GridItem>
         );
       })}
@@ -94,10 +116,13 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
             alignItems="center"
             p={0}
           >
-            <Box w="full">
-              <Slider {...settings}>
-                {selectedImage?.subImgs.map((subImage, index) => (
-                    <Image
+             {loading ? (
+              <Loader /> 
+            ) : (
+              <Box w="full">
+                <Slider {...settings}>
+                  {selectedImage?.subImgs.map((subImage, index) => (
+                    <ChakraImage
                       key={index}
                       borderRadius="md"
                       p={{ base: 2, md: 2, lg: 1 }}
@@ -108,9 +133,10 @@ export const GalleryItem: React.FC<GalleryItemProps> = ({ images }) => {
                       maxW="100%"
                       objectFit="cover"
                     />
-                ))}
-              </Slider>
-            </Box>
+                  ))}
+                </Slider>
+              </Box>
+            )}
           </ModalBody>
         </ModalContent>
       </Modal>
