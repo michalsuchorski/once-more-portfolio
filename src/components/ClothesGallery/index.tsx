@@ -9,6 +9,12 @@ import m2 from "../../pages/Marynarki/imgs/m2-min.png";
 import m3 from "../../pages/Marynarki/imgs/m3-min.png";
 import m4 from "../../pages/Marynarki/imgs/m4-min.png";
 
+import marynarka1_1 from "../../pages/Marynarki/imgs/marynarka1_1.jpeg";
+import marynarka1_2 from "../../pages/Marynarki/imgs/marynarka1_2.jpeg";
+import marynarka1_3 from "../../pages/Marynarki/imgs/marynarka1_3.jpeg";
+import marynarka1_4 from "../../pages/Marynarki/imgs/marynarka1_4.jpeg";
+
+
 import marynarka2_1 from "../../pages/Marynarki/imgs/marynarka2_1-min.png";
 import marynarka2_2 from "../../pages/Marynarki/imgs/marynarka2_2-min.png";
 import marynarka2_3 from "../../pages/Marynarki/imgs/marynarka2_3-min.png";
@@ -58,6 +64,11 @@ export const ClothesGallery: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const images: ImageData[] = useMemo(() => [
+    {
+        src: marynarka1_1,
+        alt: 'marynakra1',
+        subImgs: [marynarka1_2, marynarka1_3, marynarka1_4]
+    },
     {
       src: img1,
       alt: "img1",

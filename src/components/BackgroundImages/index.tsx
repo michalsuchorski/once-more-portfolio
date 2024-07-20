@@ -1,30 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Image, SimpleGrid, keyframes } from '@chakra-ui/react';
 
-import dog from './dogg.jpeg';
-import cat from './cat1.jpeg';
-import tiger from './tiger.jpeg';
+interface BackgroundImagesProps {
+  images: string[];
+}
 
-import p1 from './p1.jpeg'
-import p3 from './p3.jpg'; 
-import p6 from './p6.jpg';
-import p7 from './p7.jpeg';
-import p8 from './p8.jpg';
-import p9 from './p9.jpeg';
-
-import zuk from './zuk.jpeg'
-import bee from './bee.jpeg'
-import zebra from './zebra.jpeg'
-import leopard from './leopard.jpeg'
-import biedronka from './ladybug.jpeg'
-import zuczki from './zuczki.png'
-import pszczolka from './closeup-of-bee.jpg'
-
-const images = [
-  dog, cat, p1 ,tiger, p3, p6, zuczki, pszczolka ,biedronka ,p7, p8, p9, zuk, bee, zebra, leopard
-];
-
-const shuffleImages = (images: string[]) => {
+const shuffleImages = (images: string[]): string[] => {
   const array = [...images];
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -33,13 +14,13 @@ const shuffleImages = (images: string[]) => {
   return array;
 };
 
-export const BackgroundImages: React.FC = () => {
+export const BackgroundImages: React.FC<BackgroundImagesProps> = ({ images }) => {
   const [loaded, setLoaded] = useState<boolean[]>(new Array(images.length).fill(false));
   const [shuffledImages, setShuffledImages] = useState<string[]>([]);
 
   useEffect(() => {
     setShuffledImages(shuffleImages(images));
-  }, []);
+  }, [images]);
 
   const handleLoad = (index: number) => {
     setLoaded((prev) => {

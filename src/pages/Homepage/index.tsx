@@ -27,6 +27,54 @@ import { useState, useEffect, useRef } from "react";
 import { Loader } from "../../components/Loader";
 import FontFaceObserver from "fontfaceobserver";
 
+
+import bg1 from '../../pages/Home/backgroundImages/bg1.jpeg'
+import bg2 from '../../pages/Home/backgroundImages/bg2.jpeg'
+import bg3 from '../../pages/Home/backgroundImages/bg3.jpeg'
+import bg4 from '../../pages/Home/backgroundImages/bg4.jpeg'
+import bg5 from '../../pages/Home/backgroundImages/bg5.jpeg'
+import bg6 from '../../pages/Home/backgroundImages/bg6.png'
+import bg7 from '../../pages/Home/backgroundImages/bg7.jpeg'
+import bg8 from '../../pages/Home/backgroundImages/bg8.jpg'
+import bg9 from '../../pages/Home/backgroundImages/bg9.jpg'
+import bg10 from '../../pages/Home/backgroundImages/bg10.jpg'
+import bg11 from '../../pages/Home/backgroundImages/bg11.jpg'
+import bg12 from '../../pages/Home/backgroundImages/bg12.jpg'
+import bg13 from '../../pages/Home/backgroundImages/bg13.jpg'
+import bg14 from '../../pages/Home/backgroundImages/bg14.jpg'
+import bg15 from '../../pages/Home/backgroundImages/bg15.jpg'
+import bg16 from '../../pages/Home/backgroundImages/bg16.jpg'
+
+import bg17 from '../../pages/Home/backgroundImages/bg17.jpg'
+import bg18 from '../../pages/Home/backgroundImages/bg18.jpg'
+import bg19 from '../../pages/Home/backgroundImages/bg19.jpg'
+import bg20 from '../../pages/Home/backgroundImages/bg20.png'
+import bg21 from '../../pages/Home/backgroundImages/bg21.png'
+import bg22 from '../../pages/Home/backgroundImages/bg22.png'
+import bg23 from '../../pages/Home/backgroundImages/bg23.png'
+import bg24 from '../../pages/Home/backgroundImages/bg24.png'
+import bg25 from '../../pages/Home/backgroundImages/bg25.png'
+import bg26 from '../../pages/Home/backgroundImages/bg26.png'
+import bg27 from '../../pages/Home/backgroundImages/bg27.png'
+import bg28 from '../../pages/Home/backgroundImages/bg28.png'
+import bg29 from '../../pages/Home/backgroundImages/bg29.png'
+import bg30 from '../../pages/Home/backgroundImages/bg30.png'
+import bg31 from '../../pages/Home/backgroundImages/bg31.png'
+import bg32 from '../../pages/Home/backgroundImages/bg32.png'
+
+
+
+
+
+
+const bgImages = [
+  bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10, bg11, bg12, bg13, bg14, bg15, bg16
+];
+
+const bgImages2 = [
+  bg17, bg18, bg19, bg20, bg21, bg22, bg23, bg24, bg25, bg26, bg27, bg28, bg29, bg30, bg31, bg32 
+]
+
 const useFontLoader = (fontName: string) => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -89,7 +137,7 @@ const Homepage = () => {
         flexDirection="column"
       >
         <HStack width="100%" h="300px" zIndex="0">
-          <BackgroundImages />
+          <BackgroundImages images={bgImages} />
         </HStack>
         <VStack
           zIndex="1"
@@ -204,7 +252,7 @@ const Homepage = () => {
               mt={{ base: 8, md: "0px", lg: "0px" }}
             >
               <ReactLink to={`home`}>HOME</ReactLink>
-              <Link>MARYNARKI</Link>
+              <ReactLink to={`marynarki`}>MARYNARKI</ReactLink>
               <Link>KOSZULE</Link>
               <Link>SUKIENKI</Link>
               <Link>O NAS</Link>
@@ -217,7 +265,7 @@ const Homepage = () => {
           overflow="hidden"
           h='300px'
         >
-          <BackgroundImages />
+          <BackgroundImages images={bgImages2} />
         </HStack>
       </Flex>
 
