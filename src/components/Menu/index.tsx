@@ -38,8 +38,8 @@ export const ResponsiveMenu = () => {
         >
           <ReactLink to={"/home"}>HOME</ReactLink>
           <ReactLink to={"/marynarki"}>MARYNARKI</ReactLink>
-          <Link>KOSZULE</Link>
-          <Link>SUKIENKI</Link>
+          <ReactLink to={'/'}>KOSZULE</ReactLink>
+          <ReactLink to={'/sukienki'}>SUKIENKI</ReactLink>
           <Link>O NAS</Link>
         </HStack>
         <IconButton
@@ -58,8 +58,8 @@ export const ResponsiveMenu = () => {
               <VStack gap={6} fontSize="x-large" py={10}>
                 <ReactLink to={"/home"}>HOME</ReactLink>
                 <ReactLink to={"/marynarki"}>MARYNARKI</ReactLink>
-                <Link>KOSZULE</Link>
-                <Link>SUKIENKI</Link>
+                <ReactLink to={'/'}>KOSZULE</ReactLink>
+                <ReactLink to={'/sukienki'}>SUKIENKI</ReactLink>
                 <Link>O NAS</Link>
               </VStack>
             </DrawerBody>

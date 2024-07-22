@@ -254,7 +254,7 @@ const Homepage = () => {
               <ReactLink to={`home`}>HOME</ReactLink>
               <ReactLink to={`marynarki`}>MARYNARKI</ReactLink>
               <Link>KOSZULE</Link>
-              <Link>SUKIENKI</Link>
+              <ReactLink to={'sukienki'}>SUKIENKI</ReactLink>
               <Link>O NAS</Link>
               <Button size="lg">KONTAKT</Button>
             </Flex>

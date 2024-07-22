@@ -123,7 +123,7 @@ import {
         <Modal isOpen={isOpen} onClose={onClose} isCentered>
           <ModalOverlay />
           <ModalContent
-            height={{ base: "85vh", md: "90vh", lg: "100vh" }}
+            height={{ base: "90vh", md: "90vh", lg: "100vh" }}
             w="100vw"
             maxW="none"
           >
