@@ -37,7 +37,7 @@ export const BackgroundImages: React.FC<BackgroundImagesProps> = ({ images }) =>
 
   return (
     <SimpleGrid
-      columns={{ base: 4, sm: 4, md: 5, lg: 5, xl: 8 }}
+      columns={{ base: 4, sm: 4, md: 4, lg: 4, xl: 8 }}
       overflow='hidden'
       width="100%"
     >
@@ -45,11 +45,12 @@ export const BackgroundImages: React.FC<BackgroundImagesProps> = ({ images }) =>
         <Box
           key={index}
           w="100%"
-          h={{ base: '100px', sm: '125px', md: '150px', lg: '150px', xl: '150px' }}
+          h={{ base: '25vw', sm: '20vw', md: '15vw', lg: '8vw', xl: '8vw' }}
           bg="gray.200"
           display="flex"
           justifyContent="center"
           alignItems="center"
+          overflow='hidden'
         >
           <Image
             src={src}

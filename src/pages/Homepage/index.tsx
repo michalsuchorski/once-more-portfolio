@@ -136,17 +136,16 @@ const Homepage = () => {
         minH="100vh"
         flexDirection="column"
       >
-        <HStack width="100%" h="300px" zIndex="0">
+        <HStack width="100%" maxH={{ base: '300px', md: 'none'}}>
           <BackgroundImages images={bgImages} />
         </HStack>
         <VStack
-          zIndex="1"
           w="100%"
           backgroundColor="white"
           p={{ base: 4, md: 10, lg: 10 }}
           overflowX="hidden"
         >
-          <VStack alignItems="flex-start" w="100%">
+          <VStack alignItems="flex-start" w="100%" mt={-12}>
             <HStack w="full" minH={{ base: "200px" }}>
               <Image
                 onClick={onOpen}
@@ -171,7 +170,8 @@ const Homepage = () => {
               />
             </HStack>
             <Text
-              w={{ base: "100%", md: "70%", lg: "70%" }}
+              mt={{ base: -12, md: -6}}
+              w={{ base: "100%", md: "70%", lg: "50%" }}
               h="auto"
               fontSize={{ base: "16px", md: "18px", lg: "18px" }}
               textAlign='justify'   
@@ -263,7 +263,7 @@ const Homepage = () => {
         <HStack
           width="100%"
           overflow="hidden"
-          h='300px'
+          maxH={{ base: '300px', md: 'none'}}
         >
           <BackgroundImages images={bgImages2} />
         </HStack>
