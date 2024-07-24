@@ -105,6 +105,7 @@ import {
             w="100%"
             cursor="pointer"
             key={image.src}
+            p={3}
             onClick={() => {
               setSelectedImage(image);
               onOpen();
