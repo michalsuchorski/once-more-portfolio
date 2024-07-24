@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Image, SimpleGrid, keyframes } from '@chakra-ui/react';
+import React, { useState, useEffect } from "react";
+import { Box, Image, SimpleGrid, keyframes } from "@chakra-ui/react";
 
 interface BackgroundImagesProps {
   images: string[];
@@ -14,8 +14,12 @@ const shuffleImages = (images: string[]): string[] => {
   return array;
 };
 
-export const BackgroundImages: React.FC<BackgroundImagesProps> = ({ images }) => {
-  const [loaded, setLoaded] = useState<boolean[]>(new Array(images.length).fill(false));
+export const BackgroundImages: React.FC<BackgroundImagesProps> = ({
+  images,
+}) => {
+  const [loaded, setLoaded] = useState<boolean[]>(
+    new Array(images.length).fill(false)
+  );
   const [shuffledImages, setShuffledImages] = useState<string[]>([]);
 
   useEffect(() => {
@@ -38,32 +42,36 @@ export const BackgroundImages: React.FC<BackgroundImagesProps> = ({ images }) =>
   return (
     <SimpleGrid
       columns={{ base: 4, sm: 4, md: 4, lg: 4, xl: 8 }}
-      overflow='hidden'
+      overflow="hidden"
       width="100%"
     >
       {shuffledImages.map((src, index) => (
         <Box
           key={index}
           w="100%"
-          h={{ base: '25vw', sm: '20vw', md: '15vw', lg: '8vw', xl: '8vw' }}
+          h={{ base: "25vw", sm: "20vw", md: "15vw", lg: "8vw", xl: "8vw" }}
           bg="gray.200"
           display="flex"
           justifyContent="center"
           alignItems="center"
-          overflow='hidden'
+          overflow="hidden"
         >
           <Image
             src={src}
             alt={`image-${index}`}
             onLoad={() => handleLoad(index)}
-            display={loaded[index] ? 'block' : 'none'}
+            display={loaded[index] ? "block" : "none"}
             animation={`${fadeIn} 0.5s ease-in-out`}
             objectFit="cover"
             w="100%"
             h="100%"
           />
           {!loaded[index] && (
-            <Box w="100%" h="100%" bg="gray.200" />
+            <Box
+              w="100%"
+              h={{ base: "25vw", sm: "20vw", md: "15vw", lg: "8vw", xl: "8vw" }}
+              bg="gray.200"
+            />
           )}
         </Box>
       ))}

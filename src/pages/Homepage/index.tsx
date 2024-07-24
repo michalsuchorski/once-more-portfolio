@@ -62,17 +62,12 @@ import bg30 from '../../pages/Home/backgroundImages/bg30.png'
 import bg31 from '../../pages/Home/backgroundImages/bg31.png'
 import bg32 from '../../pages/Home/backgroundImages/bg32.png'
 
-
-
-
-
-
 const bgImages = [
-  bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10, bg11, bg12, bg13, bg14, bg15, bg16
+  bg3, bg4, bg6, bg8, bg11, bg12, bg14, bg16, bg17, bg18, bg19, bg22, bg23, bg24, bg25, bg32
 ];
 
 const bgImages2 = [
-  bg17, bg18, bg19, bg20, bg21, bg22, bg23, bg24, bg25, bg26, bg27, bg28, bg29, bg30, bg31, bg32 
+  bg20, bg21, bg26, bg27, bg28, bg29, bg30, bg31, bg1, bg2, bg5, bg7, bg9, bg10, bg13, bg15
 ]
 
 const useFontLoader = (fontName: string) => {
