@@ -49,7 +49,7 @@ export const BackgroundImages: React.FC<BackgroundImagesProps> = ({
         <Box
           key={index}
           w="100%"
-          h={{ base: "25vw", sm: "20vw", md: "15vw", lg: "8vw", xl: "8vw" }}
+          h={{ base: "25vw", sm: "20vw", md: "15vw", lg: "12vw", xl: "11vw" }}
           bg="gray.200"
           display="flex"
           justifyContent="center"
@@ -69,7 +69,7 @@ export const BackgroundImages: React.FC<BackgroundImagesProps> = ({
           {!loaded[index] && (
             <Box
               w="100%"
-              h={{ base: "25vw", sm: "20vw", md: "15vw", lg: "8vw", xl: "8vw" }}
+              h='100%'
               bg="gray.200"
             />
           )}

@@ -27,55 +27,84 @@ import { useState, useEffect, useRef } from "react";
 import { Loader } from "../../components/Loader";
 import FontFaceObserver from "fontfaceobserver";
 
+import bg1 from "../../pages/Home/backgroundImages/bg1.jpeg";
+import bg2 from "../../pages/Home/backgroundImages/bg2.jpeg";
+import bg3 from "../../pages/Home/backgroundImages/bg3.jpeg";
+import bg4 from "../../pages/Home/backgroundImages/bg4.jpeg";
+import bg5 from "../../pages/Home/backgroundImages/bg5.jpeg";
+import bg6 from "../../pages/Home/backgroundImages/bg6.png";
+import bg7 from "../../pages/Home/backgroundImages/bg7.jpeg";
+import bg8 from "../../pages/Home/backgroundImages/bg8.jpg";
+import bg9 from "../../pages/Home/backgroundImages/bg9.jpg";
+import bg10 from "../../pages/Home/backgroundImages/bg10.jpg";
+import bg11 from "../../pages/Home/backgroundImages/bg11.jpg";
+import bg12 from "../../pages/Home/backgroundImages/bg12.jpg";
+import bg13 from "../../pages/Home/backgroundImages/bg13.jpg";
+import bg14 from "../../pages/Home/backgroundImages/bg14.jpg";
+import bg15 from "../../pages/Home/backgroundImages/bg15.jpg";
+import bg16 from "../../pages/Home/backgroundImages/bg16.jpg";
 
-import bg1 from '../../pages/Home/backgroundImages/bg1.jpeg'
-import bg2 from '../../pages/Home/backgroundImages/bg2.jpeg'
-import bg3 from '../../pages/Home/backgroundImages/bg3.jpeg'
-import bg4 from '../../pages/Home/backgroundImages/bg4.jpeg'
-import bg5 from '../../pages/Home/backgroundImages/bg5.jpeg'
-import bg6 from '../../pages/Home/backgroundImages/bg6.png'
-import bg7 from '../../pages/Home/backgroundImages/bg7.jpeg'
-import bg8 from '../../pages/Home/backgroundImages/bg8.jpg'
-import bg9 from '../../pages/Home/backgroundImages/bg9.jpg'
-import bg10 from '../../pages/Home/backgroundImages/bg10.jpg'
-import bg11 from '../../pages/Home/backgroundImages/bg11.jpg'
-import bg12 from '../../pages/Home/backgroundImages/bg12.jpg'
-import bg13 from '../../pages/Home/backgroundImages/bg13.jpg'
-import bg14 from '../../pages/Home/backgroundImages/bg14.jpg'
-import bg15 from '../../pages/Home/backgroundImages/bg15.jpg'
-import bg16 from '../../pages/Home/backgroundImages/bg16.jpg'
-
-import bg17 from '../../pages/Home/backgroundImages/bg17.jpg'
-import bg18 from '../../pages/Home/backgroundImages/bg18.jpg'
-import bg19 from '../../pages/Home/backgroundImages/bg19.jpg'
-import bg20 from '../../pages/Home/backgroundImages/bg20.png'
-import bg21 from '../../pages/Home/backgroundImages/bg21.png'
-import bg22 from '../../pages/Home/backgroundImages/bg22.png'
-import bg23 from '../../pages/Home/backgroundImages/bg23.png'
-import bg24 from '../../pages/Home/backgroundImages/bg24.png'
-import bg25 from '../../pages/Home/backgroundImages/bg25.png'
-import bg26 from '../../pages/Home/backgroundImages/bg26.png'
-import bg27 from '../../pages/Home/backgroundImages/bg27.png'
-import bg28 from '../../pages/Home/backgroundImages/bg28.png'
-import bg29 from '../../pages/Home/backgroundImages/bg29.png'
-import bg30 from '../../pages/Home/backgroundImages/bg30.png'
-import bg31 from '../../pages/Home/backgroundImages/bg31.png'
-import bg32 from '../../pages/Home/backgroundImages/bg32.png'
+import bg17 from "../../pages/Home/backgroundImages/bg17.jpg";
+import bg18 from "../../pages/Home/backgroundImages/bg18.jpg";
+import bg19 from "../../pages/Home/backgroundImages/bg19.jpg";
+import bg20 from "../../pages/Home/backgroundImages/bg20.png";
+import bg21 from "../../pages/Home/backgroundImages/bg21.png";
+import bg22 from "../../pages/Home/backgroundImages/bg22.png";
+import bg23 from "../../pages/Home/backgroundImages/bg23.png";
+import bg24 from "../../pages/Home/backgroundImages/bg24.png";
+import bg25 from "../../pages/Home/backgroundImages/bg25.png";
+import bg26 from "../../pages/Home/backgroundImages/bg26.png";
+import bg27 from "../../pages/Home/backgroundImages/bg27.png";
+import bg28 from "../../pages/Home/backgroundImages/bg28.png";
+import bg29 from "../../pages/Home/backgroundImages/bg29.png";
+import bg30 from "../../pages/Home/backgroundImages/bg30.png";
+import bg31 from "../../pages/Home/backgroundImages/bg31.png";
+import bg32 from "../../pages/Home/backgroundImages/bg32.png";
 
 const bgImages = [
-  bg3, bg4, bg6, bg8, bg11, bg12, bg14, bg16, bg17, bg18, bg19, bg22, bg23, bg24, bg25, bg32
+  bg3,
+  bg4,
+  bg6,
+  bg8,
+  bg11,
+  bg12,
+  bg14,
+  bg16,
+  bg17,
+  bg18,
+  bg19,
+  bg22,
+  bg23,
+  bg24,
+  bg25,
+  bg32,
 ];
 
 const bgImages2 = [
-  bg20, bg21, bg26, bg27, bg28, bg29, bg30, bg31, bg1, bg2, bg5, bg7, bg9, bg10, bg13, bg15
-]
+  bg20,
+  bg21,
+  bg26,
+  bg27,
+  bg28,
+  bg29,
+  bg30,
+  bg31,
+  bg1,
+  bg2,
+  bg5,
+  bg7,
+  bg9,
+  bg10,
+  bg13,
+  bg15,
+];
 
 const useFontLoader = (fontName: string) => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
     const loadFonts = async () => {
-      const font = new FontFaceObserver(fontName)
+      const font = new FontFaceObserver(fontName);
       try {
         await font.load();
         setFontsLoaded(true);
@@ -125,16 +154,12 @@ const Homepage = () => {
 
   return (
     <>
-      <Flex
-        w="100%"
-        alignItems="center"
-        minH="100vh"
-        flexDirection="column"
-      >
-        <HStack width="100%" maxH={{ base: '300px', md: 'none'}}>
+      <Flex w="100%" alignItems="center" minH="100vh" flexDirection="column">
+        <HStack width="100%" maxH={{ base: "300px", md: "none" }} zIndex="0">
           <BackgroundImages images={bgImages} />
         </HStack>
         <VStack
+          zIndex="1"
           w="100%"
           backgroundColor="white"
           p={{ base: 4, md: 10, lg: 10 }}
@@ -165,41 +190,26 @@ const Homepage = () => {
               />
             </HStack>
             <Text
-              mt={{ base: -12, md: -6}}
-              w={{ base: "100%", md: "70%", lg: "50%" }}
+              mt={{ base: -12, md: -6 }}
+              w={{ base: "100%", md: "70%", lg: "70%" }}
               h="auto"
               fontSize={{ base: "16px", md: "18px", lg: "18px" }}
-              textAlign='justify'   
-              sx={{ 'text-justify': 'inter-word'}}
-              
+              textAlign="justify"
+              sx={{ "text-justify": "inter-word" }}
             >
-              Once more-
-              Jeszcze raz!
-              Dla Naszego środowiska, z myślą o przyszłości. 
-              
-              Przerost konsumpcji degraduje Świat, dlatego ponownie podnosimy
-              używane i niemodne ubrania. 
-              
-              Każda rzecz, którą odnawiamy, niesie ważne przesłanie. 
-              
-              Nic nie trzeba mówić! Wystarczy założyć! 
-              
-              Ubrania z drugiej ręki na których malujemy, naszywamy i haftujemy
-              - alert ekosystemowy. 
-              
-              Więcej wody, drzew, dzikiej przyrody, więcej miłości! 
-              
-              Za dużo, za mocno, za ciasno….w miejscu, w którym żyjemy! 
-              
-              🌍 My stawiamy na promocję ekologicznej świadomości. 
-              
-              Zysk czy przyszłość? Świadomość czy ustawiczny wyścig? Czerwone?
-              Szerokie? Krótkie? Dopasowane czy jednak zielone? 
-              
-              Nasze ubrania to filary ogłoszeniowe w przestrzeni
+              Once more- Jeszcze raz! Dla Naszego środowiska, z myślą o
+              przyszłości. Przerost konsumpcji degraduje Świat, dlatego ponownie
+              podnosimy używane i niemodne ubrania. Każda rzecz, którą
+              odnawiamy, niesie ważne przesłanie. Nic nie trzeba mówić!
+              Wystarczy założyć! Ubrania z drugiej ręki na których malujemy,
+              naszywamy i haftujemy - alert ekosystemowy. Więcej wody, drzew,
+              dzikiej przyrody, więcej miłości! Za dużo, za mocno, za ciasno….w
+              miejscu, w którym żyjemy! 🌍 My stawiamy na promocję ekologicznej
+              świadomości. Zysk czy przyszłość? Świadomość czy ustawiczny
+              wyścig? Czerwone? Szerokie? Krótkie? Dopasowane czy jednak
+              zielone? Nasze ubrania to filary ogłoszeniowe w przestrzeni
               międzypokoleniowej, to głos boomersa i świadomość milenialsa.{" "}
-               
-              Nasze ubrania są: 
+              Nasze ubrania są:
             </Text>
             <UnorderedList>
               <ListItem>świadome</ListItem>
@@ -224,20 +234,27 @@ const Homepage = () => {
             letterSpacing="1.5px"
           >
             <HStack mr={8}>
-              <IconButton
-                isRound={true}
-                size="lg"
-                fontSize="24px"
-                aria-label="instagram"
-                icon={<FaInstagram />}
-              />
-              <IconButton
-                isRound={true}
-                size="lg"
-                fontSize="24px"
-                aria-label="facebook"
-                icon={<FaFacebookF />}
-              />
+              <Link href="https://www.instagram.com/oncemore_pl/" isExternal>
+                <IconButton
+                  isRound={true}
+                  size="lg"
+                  fontSize="24px"
+                  aria-label="instagram"
+                  icon={<FaInstagram />}
+                />
+              </Link>
+              <Link
+                href="https://www.facebook.com/profile.php?id=61550597183013"
+                isExternal
+              >
+                <IconButton
+                  isRound={true}
+                  size="lg"
+                  fontSize="24px"
+                  aria-label="facebook"
+                  icon={<FaFacebookF />}
+                />
+              </Link>
             </HStack>
             <Flex
               alignItems={{ base: "flex-start", md: "center", lg: "center" }}
@@ -248,8 +265,8 @@ const Homepage = () => {
             >
               <ReactLink to={`home`}>HOME</ReactLink>
               <ReactLink to={`marynarki`}>MARYNARKI</ReactLink>
-              <Link>KOSZULE</Link>
-              <ReactLink to={'sukienki'}>SUKIENKI</ReactLink>
+              <ReactLink to={`koszule`}>KOSZULE</ReactLink>
+              <ReactLink to={`sukienki`}>SUKIENKI</ReactLink>
               <Link>O NAS</Link>
               <Button size="lg">KONTAKT</Button>
             </Flex>
@@ -258,7 +275,8 @@ const Homepage = () => {
         <HStack
           width="100%"
           overflow="hidden"
-          maxH={{ base: '300px', md: 'none'}}
+          minH={{ base: "300px", md: "none" }}
+          zIndex="0"
         >
           <BackgroundImages images={bgImages2} />
         </HStack>
@@ -303,4 +321,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage
+export default Homepage;
