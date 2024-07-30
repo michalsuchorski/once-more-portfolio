@@ -17,7 +17,7 @@ import img1 from "../../imgs/home-img/bee-min.png";
 import img2 from "../../imgs/home-img/freedom-min.png";
 import img3 from "../../imgs/home-img/love-min.png";
 import img4 from "../../imgs/home-img/moonlight-min.png";
-import img5 from "../../imgs/home-img/morewildlife-min.png";
+import img5 from "../../imgs/home-img/more-wildlife.png";
 import img6 from "../../imgs/home-img/shine-min.png";
 import img7 from "../../imgs/home-img/trees-min.png";
 import img8 from "../../imgs/home-img/water-min.png";
