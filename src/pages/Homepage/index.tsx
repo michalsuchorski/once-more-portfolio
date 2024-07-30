@@ -21,7 +21,7 @@ import {
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { Link as ReactLink } from "react-router-dom";
 import logo from "../../imgs/logo.png";
-import OnceMore from "../../imgs/oncemore_napis.gif";
+import OnceMore from "../../imgs/NAPIS2porba.gif";
 import { BackgroundImages } from "../../components/BackgroundImages";
 import { useState, useEffect, useRef } from "react";
 import { Loader } from "../../components/Loader";
@@ -99,6 +99,8 @@ const bgImages2 = [
   bg15,
 ];
 
+
+
 const useFontLoader = (fontName: string) => {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -119,7 +121,14 @@ const useFontLoader = (fontName: string) => {
   return fontsLoaded;
 };
 
+
+
 const Homepage = () => {
+
+  useEffect(() => {
+    document.title = 'once more';
+  }, [])
+
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [isLogoLoaded, setIsLogoLoaded] = useState<boolean>(false);
@@ -152,6 +161,8 @@ const Homepage = () => {
     return <Loader />;
   }
 
+ 
+
   return (
     <>
       <Flex w="100%" alignItems="center" minH="100vh" flexDirection="column">
@@ -181,6 +192,7 @@ const Homepage = () => {
               />
               <Image
                 src={OnceMore}
+                ml={-4}
                 width={{ base: "400px", md: "500px", lg: "600px" }}
                 opacity={isLogoLoaded ? 1 : 0}
                 transition="opacity 0.3s ease-in-out"
